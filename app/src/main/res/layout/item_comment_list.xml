@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" >
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
+
         <variable
             name="commentViewModel"
-            type="com.example.mvvmtest.ui.viewmodel.CommentViewModel"/>
+            type="com.example.mvvmtest.ui.viewmodel.CommentViewModel" />
     </data>
 
 
-    <androidx.cardview.widget.CardView
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.cardview.widget.CardView xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:background="@color/cardview_dark_background"
-        >
-
+        android:layout_margin="10dp"
+        app:cardBackgroundColor="@color/cardview_dark_background"
+        app:cardCornerRadius="10dp">
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -31,18 +31,18 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
                 android:textSize="15dp"
-                app:mutableText="@{commentViewModel.getCommentName()}"
-                app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:mutableText="@{commentViewModel.getCommentName()}"
                 tools:text="Hola" />
 
             <TextView
                 android:id="@+id/post_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:mutableText="@{commentViewModel.getCommentBody()}"
-                app:layout_constraintTop_toBottomOf="@id/post_user_id"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/post_user_id"
+                app:mutableText="@{commentViewModel.getCommentBody()}"
                 tools:text="Hola" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

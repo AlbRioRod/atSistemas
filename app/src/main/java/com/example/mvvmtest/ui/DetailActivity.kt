@@ -33,7 +33,7 @@ class DetailActivity: AppCompatActivity() {
 
         binding.postTitle.text = intent.getStringExtra("title")
         binding.postBody.text = intent.getStringExtra("body")
-        binding.postUser.text = intent.getStringExtra("user")
+        binding.postUser.visibility = View.GONE
 
 
         binding.commentList.layoutManager = LinearLayoutManager(this, RecyclerView.VERTICAL, false)
@@ -70,6 +70,7 @@ class DetailActivity: AppCompatActivity() {
 
     private fun showUser( userName: String) {
         binding.postUser.text = userName
+        binding.postUser.visibility = View.VISIBLE
 
     }
 
